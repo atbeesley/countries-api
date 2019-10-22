@@ -12,8 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
     computed: {
       totalPopulations: function(){
         return this.countries.reduce((runningTotal, country) => runningTotal + country.population, 0)
+      },
+      filteredCountries: function(){
+        return this.countries.filter((country) => {
+          return country.population;
+        })
       }
     },
+
     methods: {
       fetchCountries: function (){
           fetch("https://restcountries.eu/rest/v2/all")
@@ -24,3 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 })
+
+// filteredAccounts: function () {
+//     return this.accounts.filter((account) => {
+//       return account.balance >= this.filterAmount;
+//     });
+//   }
+// },

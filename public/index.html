@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Countries</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <script type="text/javascript" src="./js/bundle.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>Countries</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <script type="text/javascript" src="./js/bundle.js"></script>
+</head>
 
-  <body>
-    <div id="app">
-      <h1>Countries</h1>
-      <h2>Total population of all the countries: {{ totalPopulations }}</h2>
-      <button v-on:click="fetchCountries">Fetch Countries</button>
-    </div>
-  </body>
+<body>
+  <div id="app">
+    <h1>Countries</h1>
+    <h2>Total population of all the countries: {{ totalPopulations }}</h2>
+
+  <br>
+
+  <div class="form-item">
+    <select id="country">
+      <option v-for="country in countries">{{country.name}}</option>
+    </select>
+  </div>
+<input type="submit" value="Display info"/>
+
+</div>
+</body>
 </html>
